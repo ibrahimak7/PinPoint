@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class RegisterViewController: UIViewController, UITextFieldDelegate{
 
     @IBOutlet var fields: [UITextField]!
