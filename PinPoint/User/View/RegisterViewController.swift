@@ -7,10 +7,13 @@
 //
 
 import UIKit
-class RegisterViewController: UIViewController, UITextFieldDelegate{
-
+class RegisterViewController: UIViewController, UITextFieldDelegate, RegisterProtocol {
+    
+    var presenter: RegisterPresenter!
     @IBOutlet var fields: [UITextField]!
     @IBOutlet weak var registerBtn: UIButton!
+    
+    @IBOutlet weak var msgLabel: UILabel!
     @IBOutlet weak var nameField: UITextField! {
         didSet {
             nameField.tag = 0
@@ -42,6 +45,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate{
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter = RegisterPresenter()
+        presenter.delegate = self
         registerBtn.layer.cornerRadius = 4
         // assaigning delegates to fields
         for i in fields {
@@ -51,6 +56,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate{
         
     }
     @IBAction func RegisterBtnPressed(_ sender: Any) {
+        self.presenter.checkData(userData: UserData(name: nameField.text!, email: emailField.text!, password: passwordField.text!))
     }
     
     // Extension of TextField
@@ -65,5 +71,13 @@ class RegisterViewController: UIViewController, UITextFieldDelegate{
         }
         return false
     }
+    // Protocols
     
+    func displayMessage(msg: String) {
+        msgLabel.text = msg
+    }
+    
+    func success() {
+        self.performSegue(withIdentifier: "fromRegisterToUser", sender: nil)
+    }
 }

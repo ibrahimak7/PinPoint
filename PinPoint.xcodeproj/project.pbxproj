@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		8706E67AE9963FDA9D725E8B /* Pods_PinPoint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D40EF0C44D9FFD62DB538A /* Pods_PinPoint.framework */; };
 		EE5A170C21ED7EA0001F3087 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5A170B21ED7EA0001F3087 /* RegisterViewController.swift */; };
+		EE6ABD5521EE2A4600FC78C5 /* RegisterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6ABD5421EE2A4600FC78C5 /* RegisterProtocol.swift */; };
+		EE6ABD5721EE2ACF00FC78C5 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6ABD5621EE2ACF00FC78C5 /* RegisterPresenter.swift */; };
+		EE6ABD5A21EE2B2400FC78C5 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6ABD5921EE2B2400FC78C5 /* RegisterModel.swift */; };
+		EE6ABD5F21EE41C200FC78C5 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6ABD5E21EE41C200FC78C5 /* LoginPresenter.swift */; };
+		EE6ABD6121EE41DB00FC78C5 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6ABD6021EE41DB00FC78C5 /* LoginModel.swift */; };
+		EE6ABD6321EE421D00FC78C5 /* LoginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6ABD6221EE421D00FC78C5 /* LoginProtocol.swift */; };
+		EE6ABD6621EE46E400FC78C5 /* PinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6ABD6521EE46E400FC78C5 /* PinsViewController.swift */; };
 		EEB004E321ECD560007CE532 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB004E221ECD560007CE532 /* AppDelegate.swift */; };
 		EEB004EA21ECD560007CE532 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEB004E821ECD560007CE532 /* Main.storyboard */; };
 		EEB004EC21ECD562007CE532 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEB004EB21ECD562007CE532 /* Assets.xcassets */; };
@@ -23,6 +30,13 @@
 		71D40EF0C44D9FFD62DB538A /* Pods_PinPoint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PinPoint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD6241952D5D8C9BACF476ED /* Pods-PinPoint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinPoint.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PinPoint/Pods-PinPoint.debug.xcconfig"; sourceTree = "<group>"; };
 		EE5A170B21ED7EA0001F3087 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		EE6ABD5421EE2A4600FC78C5 /* RegisterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocol.swift; sourceTree = "<group>"; };
+		EE6ABD5621EE2ACF00FC78C5 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		EE6ABD5921EE2B2400FC78C5 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
+		EE6ABD5E21EE41C200FC78C5 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		EE6ABD6021EE41DB00FC78C5 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		EE6ABD6221EE421D00FC78C5 /* LoginProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocol.swift; sourceTree = "<group>"; };
+		EE6ABD6521EE46E400FC78C5 /* PinsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinsViewController.swift; sourceTree = "<group>"; };
 		EEB004DF21ECD560007CE532 /* PinPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PinPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEB004E221ECD560007CE532 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEB004E921ECD560007CE532 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,6 +79,43 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EE6ABD5321EE2A2100FC78C5 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				EE6ABD5421EE2A4600FC78C5 /* RegisterProtocol.swift */,
+				EE6ABD5621EE2ACF00FC78C5 /* RegisterPresenter.swift */,
+				EE6ABD5E21EE41C200FC78C5 /* LoginPresenter.swift */,
+				EE6ABD6221EE421D00FC78C5 /* LoginProtocol.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		EE6ABD5821EE2B0D00FC78C5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EE6ABD5921EE2B2400FC78C5 /* RegisterModel.swift */,
+				EE6ABD6021EE41DB00FC78C5 /* LoginModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EE6ABD5B21EE2B9F00FC78C5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EEB6DEE321ECF75E00FD4B77 /* LoginViewController.swift */,
+				EE5A170B21ED7EA0001F3087 /* RegisterViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EE6ABD6421EE46C400FC78C5 /* Pins */ = {
+			isa = PBXGroup;
+			children = (
+				EE6ABD6521EE46E400FC78C5 /* PinsViewController.swift */,
+			);
+			path = Pins;
+			sourceTree = "<group>";
+		};
 		EEB004D621ECD560007CE532 = {
 			isa = PBXGroup;
 			children = (
@@ -86,9 +137,11 @@
 		EEB004E121ECD560007CE532 /* PinPoint */ = {
 			isa = PBXGroup;
 			children = (
+				EE6ABD6421EE46C400FC78C5 /* Pins */,
 				EEB6DEE021ECF6C100FD4B77 /* ExtraExtensions */,
 				EEB6DEDD21ECF1D800FD4B77 /* User */,
 				EEB004E221ECD560007CE532 /* AppDelegate.swift */,
+				EEB6DEDE21ECF22400FD4B77 /* UserHomeViewController.swift */,
 				EEB004E821ECD560007CE532 /* Main.storyboard */,
 				EEB004EB21ECD562007CE532 /* Assets.xcassets */,
 				EEB004ED21ECD562007CE532 /* LaunchScreen.storyboard */,
@@ -101,9 +154,9 @@
 		EEB6DEDD21ECF1D800FD4B77 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				EEB6DEDE21ECF22400FD4B77 /* UserHomeViewController.swift */,
-				EEB6DEE321ECF75E00FD4B77 /* LoginViewController.swift */,
-				EE5A170B21ED7EA0001F3087 /* RegisterViewController.swift */,
+				EE6ABD5B21EE2B9F00FC78C5 /* View */,
+				EE6ABD5821EE2B0D00FC78C5 /* Models */,
+				EE6ABD5321EE2A2100FC78C5 /* Presenters */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -270,9 +323,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE6ABD5521EE2A4600FC78C5 /* RegisterProtocol.swift in Sources */,
 				EEB6DEE421ECF75E00FD4B77 /* LoginViewController.swift in Sources */,
+				EE6ABD5721EE2ACF00FC78C5 /* RegisterPresenter.swift in Sources */,
+				EE6ABD5F21EE41C200FC78C5 /* LoginPresenter.swift in Sources */,
+				EE6ABD6621EE46E400FC78C5 /* PinsViewController.swift in Sources */,
 				EE5A170C21ED7EA0001F3087 /* RegisterViewController.swift in Sources */,
+				EE6ABD6121EE41DB00FC78C5 /* LoginModel.swift in Sources */,
+				EE6ABD5A21EE2B2400FC78C5 /* RegisterModel.swift in Sources */,
 				EEB6DEE221ECF6F500FD4B77 /* TextFieldExtension.swift in Sources */,
+				EE6ABD6321EE421D00FC78C5 /* LoginProtocol.swift in Sources */,
 				EEB6DEDF21ECF22400FD4B77 /* UserHomeViewController.swift in Sources */,
 				EEB004E321ECD560007CE532 /* AppDelegate.swift in Sources */,
 			);
