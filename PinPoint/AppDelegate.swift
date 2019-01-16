@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         GMSServices.provideAPIKey("AIzaSyCoWuRglYJb1otJJK5T_yDyn1n_CbpHKuo")
         GMSPlacesClient.provideAPIKey("AIzaSyCoWuRglYJb1otJJK5T_yDyn1n_CbpHKuo")
+        rememberLogin()
         return true
     }
 
@@ -45,7 +46,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    func rememberLogin() {
+        let userString = UserDefaults.standard.string(forKey: "user")
+        
+        if userString != nil {
+            let story = UIStoryboard(name: "Main", bundle: nil)
+            let tabBar = story.instantiateViewController(withIdentifier: "tabBar") as! UITabBarController
+            window?.rootViewController = tabBar
+        }
+    }
 
 }
 

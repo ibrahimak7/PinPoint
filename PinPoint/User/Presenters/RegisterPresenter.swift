@@ -40,6 +40,11 @@ class RegisterPresenter: NSObject {
         ref = Database.database().reference()
         ref.child("Profile/\(uuid)").setValue(["name":name]) { (err, response) in
             guard err == nil else { return }
+            // remembering user here.
+            UserDefaults.standard.set(Auth.auth().currentUser!.email, forKey: "user")
+            UserDefaults.standard.synchronize()
+            let delegate = UIApplication.shared.delegate as! AppDelegate
+            delegate.rememberLogin()
             self.delegate.success()
         }
     }

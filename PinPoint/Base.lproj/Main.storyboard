@@ -40,7 +40,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qwF-Eg-xih" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2318.840579710145" y="-320.08928571428572"/>
+            <point key="canvasLocation" x="2319" y="-320"/>
         </scene>
         <!--Chat-->
         <scene sceneID="wg7-f3-ORb">
@@ -82,10 +82,23 @@
         <!--Profile-->
         <scene sceneID="3c2-CV-sJN">
             <objects>
-                <viewController id="ANJ-La-K8N" sceneMemberID="viewController">
+                <viewController id="ANJ-La-K8N" customClass="ProfileViewController" customModule="PinPoint" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VQh-aC-ImL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6YR-86-JZ0">
+                                <rect key="frame" x="124" y="758" width="167" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.085328288380000006" green="0.39111649990000003" blue="0.85351878400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutClicked:" destination="ANJ-La-K8N" eventType="touchUpInside" id="ryw-K2-0Wg"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Yuv-s8-Ihg"/>
                     </view>
@@ -98,7 +111,7 @@
         <!--User Home View Controller-->
         <scene sceneID="gdL-7y-m56">
             <objects>
-                <viewController id="R2c-9T-9UP" customClass="UserHomeViewController" customModule="PinPoint" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="userHomeVC" id="R2c-9T-9UP" customClass="UserHomeViewController" customModule="PinPoint" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ysl-LW-CnO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -377,7 +390,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBar" id="49e-Tb-3d3" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>

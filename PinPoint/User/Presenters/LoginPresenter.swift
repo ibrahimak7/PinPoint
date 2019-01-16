@@ -28,6 +28,10 @@ class LoginPresenter: NSObject {
                 self.delegate.displayMsg(msg: (err?.localizedDescription)!)
                 return
             }
+            UserDefaults.standard.set(response?.user.email, forKey: "user")
+            UserDefaults.standard.synchronize()
+            let delegate = UIApplication.shared.delegate as! AppDelegate
+            delegate.rememberLogin()
             self.delegate.loginSuccess()
         }
     }

@@ -16,6 +16,7 @@
 		EE6ABD6121EE41DB00FC78C5 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6ABD6021EE41DB00FC78C5 /* LoginModel.swift */; };
 		EE6ABD6321EE421D00FC78C5 /* LoginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6ABD6221EE421D00FC78C5 /* LoginProtocol.swift */; };
 		EE6ABD6621EE46E400FC78C5 /* PinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6ABD6521EE46E400FC78C5 /* PinsViewController.swift */; };
+		EE6ADDA921EED43C0041FC2D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6ADDA821EED43C0041FC2D /* ProfileViewController.swift */; };
 		EEB004E321ECD560007CE532 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB004E221ECD560007CE532 /* AppDelegate.swift */; };
 		EEB004EA21ECD560007CE532 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEB004E821ECD560007CE532 /* Main.storyboard */; };
 		EEB004EC21ECD562007CE532 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEB004EB21ECD562007CE532 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		EE6ABD6021EE41DB00FC78C5 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		EE6ABD6221EE421D00FC78C5 /* LoginProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocol.swift; sourceTree = "<group>"; };
 		EE6ABD6521EE46E400FC78C5 /* PinsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinsViewController.swift; sourceTree = "<group>"; };
+		EE6ADDA821EED43C0041FC2D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		EEB004DF21ECD560007CE532 /* PinPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PinPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEB004E221ECD560007CE532 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEB004E921ECD560007CE532 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -116,6 +118,14 @@
 			path = Pins;
 			sourceTree = "<group>";
 		};
+		EE6ADDAA21EED4580041FC2D /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				EE6ADDA821EED43C0041FC2D /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		EEB004D621ECD560007CE532 = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +147,7 @@
 		EEB004E121ECD560007CE532 /* PinPoint */ = {
 			isa = PBXGroup;
 			children = (
+				EE6ADDAA21EED4580041FC2D /* Profile */,
 				EE6ABD6421EE46C400FC78C5 /* Pins */,
 				EEB6DEE021ECF6C100FD4B77 /* ExtraExtensions */,
 				EEB6DEDD21ECF1D800FD4B77 /* User */,
@@ -333,6 +344,7 @@
 				EE6ABD5A21EE2B2400FC78C5 /* RegisterModel.swift in Sources */,
 				EEB6DEE221ECF6F500FD4B77 /* TextFieldExtension.swift in Sources */,
 				EE6ABD6321EE421D00FC78C5 /* LoginProtocol.swift in Sources */,
+				EE6ADDA921EED43C0041FC2D /* ProfileViewController.swift in Sources */,
 				EEB6DEDF21ECF22400FD4B77 /* UserHomeViewController.swift in Sources */,
 				EEB004E321ECD560007CE532 /* AppDelegate.swift in Sources */,
 			);
