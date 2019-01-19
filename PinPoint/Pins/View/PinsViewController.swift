@@ -19,9 +19,10 @@ class PinsViewController: UIViewController, CLLocationManagerDelegate {
     let zoomLevel: Float = 15.0
     override func viewDidLoad() {
         presenter = PinsPresenter()
+        
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
-        
+        print(Auth.auth().currentUser?.photoURL)
         // givig defualt map setup
         setupMap()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -34,16 +35,17 @@ class PinsViewController: UIViewController, CLLocationManagerDelegate {
         if CLLocationManager.locationServicesEnabled() {
             switch CLLocationManager.authorizationStatus() {
             case .notDetermined, .restricted, .denied:
-                self.givePopUp(msg: "Location Services is not working. You won't be able use location features in the app")
+                self.givePopUp(msg: "Location Services is available. You won't be able use location features in the app")
             case .authorizedAlways, .authorizedWhenInUse:
                 // if we have permission we will update location and use locationManager.
                 locationManager.distanceFilter = 50
                 locationManager.startUpdatingLocation()
-                locationManager.allowDeferredLocationUpdates(untilTraveled: 2, timeout: 120)
                 locationManager.delegate = self
+                locationManager.allowDeferredLocationUpdates(untilTraveled: 2, timeout: 120)
+                locationManager.allowsBackgroundLocationUpdates = true
             }
         }else{
-            print("location is disable")
+            self.givePopUp(msg: "Location services is disabled")
         }
         
     }
