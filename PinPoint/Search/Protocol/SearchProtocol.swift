@@ -7,3 +7,6 @@
 //
 
 import Foundation
+protocol SearchProtocol {
+    func searchComplete(searchDataFetched users: [String], ids: [String])
+}

@@ -8,13 +8,15 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
+class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, SearchProtocol {
+    
     var data = [String]()
     let presenter = SearchPresenter()
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.delegate = self
         searchBar.delegate = self
         tableView.delegate = self
     }
@@ -29,5 +31,9 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell")
         cell?.textLabel?.text = data[indexPath.row]
         return cell!
+    }
+    func searchComplete(searchDataFetched users: [String], ids: [String]) {
+        data = users
+        tableView.reloadData()
     }
 }
