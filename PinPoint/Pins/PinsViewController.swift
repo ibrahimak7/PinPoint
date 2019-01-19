@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Firebase
 import GoogleMaps
 import GooglePlaces
 class PinsViewController: UIViewController, CLLocationManagerDelegate {
+    var ref: DatabaseReference!
     var locationManager = CLLocationManager()
     var defaultLocation = CLLocation(latitude: 33.5889, longitude: 71.4429)
     var mapView: GMSMapView!
@@ -18,24 +20,28 @@ class PinsViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         
-        // givig defualt location
+        // givig defualt map setup
         setupMap()
-        
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
+        // enable or disable feature of app
+        self.checkPermission()
+        
+    }
+    func checkPermission(){
         if CLLocationManager.locationServicesEnabled() {
             switch CLLocationManager.authorizationStatus() {
             case .notDetermined, .restricted, .denied:
-                print("No access")
+                self.givePopUp(msg: "Location Services is not working. You won't be able use location features in the app")
             case .authorizedAlways, .authorizedWhenInUse:
-                print("Access")
+                // if we have permission we will update location and use locationManager.
+                locationManager.distanceFilter = 50
+                locationManager.startUpdatingLocation()
+                locationManager.delegate = self
             }
         }else{
             print("location is disable")
         }
-        locationManager.distanceFilter = 50
-        locationManager.startUpdatingLocation()
-        locationManager.delegate = self
         
     }
     func setupMap() {
@@ -48,17 +54,20 @@ class PinsViewController: UIViewController, CLLocationManagerDelegate {
     
     // delegates properties
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location: CLLocation = locations.last!
-        let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: zoomLevel)
-        mapView.camera = camera
-        // setting up marker for user.
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        marker.map = mapView
+        let uid = Auth.auth().currentUser?.uid
+        ref = Database.database().reference()
+        let location = locations.last?.coordinate
+        ref.child("UsersCordinates/\(uid!)").setValue(["latitude": location?.latitude,"longitude": location?.longitude])
     }
     // Handle location manager errors.
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         locationManager.stopUpdatingLocation()
         print("Error: \(error)")
+    }
+    func givePopUp(msg: String){
+        let alert = UIAlertController(title: "Error", message: msg, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(ok)
+        self.present(alert, animated: true)
     }
 }
