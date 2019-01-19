@@ -11,12 +11,14 @@ import Firebase
 import GoogleMaps
 import GooglePlaces
 class PinsViewController: UIViewController, CLLocationManagerDelegate {
+    var presenter: PinsPresenter!
     var ref: DatabaseReference!
     var locationManager = CLLocationManager()
     var defaultLocation = CLLocation(latitude: 33.5889, longitude: 71.4429)
     var mapView: GMSMapView!
     let zoomLevel: Float = 15.0
     override func viewDidLoad() {
+        presenter = PinsPresenter()
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         
@@ -37,6 +39,7 @@ class PinsViewController: UIViewController, CLLocationManagerDelegate {
                 // if we have permission we will update location and use locationManager.
                 locationManager.distanceFilter = 50
                 locationManager.startUpdatingLocation()
+                locationManager.allowDeferredLocationUpdates(untilTraveled: 2, timeout: 120)
                 locationManager.delegate = self
             }
         }else{
@@ -54,10 +57,9 @@ class PinsViewController: UIViewController, CLLocationManagerDelegate {
     
     // delegates properties
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let uid = Auth.auth().currentUser?.uid
-        ref = Database.database().reference()
         let location = locations.last?.coordinate
-        ref.child("UsersCordinates/\(uid!)").setValue(["latitude": location?.latitude,"longitude": location?.longitude])
+        // saving user location
+        self.presenter.saveUserLocation(location: location!)
     }
     // Handle location manager errors.
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

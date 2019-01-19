@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8706E67AE9963FDA9D725E8B /* Pods_PinPoint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D40EF0C44D9FFD62DB538A /* Pods_PinPoint.framework */; };
+		EE3F48D821F2C46600ACEDAB /* PinsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3F48D721F2C46600ACEDAB /* PinsPresenter.swift */; };
+		EE3F48DC21F2C4B500ACEDAB /* PinsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3F48DB21F2C4B500ACEDAB /* PinsProtocol.swift */; };
 		EE5A170C21ED7EA0001F3087 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5A170B21ED7EA0001F3087 /* RegisterViewController.swift */; };
 		EE6ABD5521EE2A4600FC78C5 /* RegisterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6ABD5421EE2A4600FC78C5 /* RegisterProtocol.swift */; };
 		EE6ABD5721EE2ACF00FC78C5 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6ABD5621EE2ACF00FC78C5 /* RegisterPresenter.swift */; };
@@ -30,6 +32,8 @@
 /* Begin PBXFileReference section */
 		71D40EF0C44D9FFD62DB538A /* Pods_PinPoint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PinPoint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD6241952D5D8C9BACF476ED /* Pods-PinPoint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinPoint.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PinPoint/Pods-PinPoint.debug.xcconfig"; sourceTree = "<group>"; };
+		EE3F48D721F2C46600ACEDAB /* PinsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinsPresenter.swift; sourceTree = "<group>"; };
+		EE3F48DB21F2C4B500ACEDAB /* PinsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinsProtocol.swift; sourceTree = "<group>"; };
 		EE5A170B21ED7EA0001F3087 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		EE6ABD5421EE2A4600FC78C5 /* RegisterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocol.swift; sourceTree = "<group>"; };
 		EE6ABD5621EE2ACF00FC78C5 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
@@ -81,6 +85,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EE3F48D621F2C44400ACEDAB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				EE3F48D721F2C46600ACEDAB /* PinsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		EE3F48D921F2C48A00ACEDAB /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EE3F48DB21F2C4B500ACEDAB /* PinsProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		EE3F48DD21F2C9A600ACEDAB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EE6ABD6521EE46E400FC78C5 /* PinsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		EE6ABD5321EE2A2100FC78C5 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,7 +141,9 @@
 		EE6ABD6421EE46C400FC78C5 /* Pins */ = {
 			isa = PBXGroup;
 			children = (
-				EE6ABD6521EE46E400FC78C5 /* PinsViewController.swift */,
+				EE3F48DD21F2C9A600ACEDAB /* View */,
+				EE3F48D921F2C48A00ACEDAB /* Protocols */,
+				EE3F48D621F2C44400ACEDAB /* Presenter */,
 			);
 			path = Pins;
 			sourceTree = "<group>";
@@ -346,6 +376,8 @@
 				EE6ABD6321EE421D00FC78C5 /* LoginProtocol.swift in Sources */,
 				EE6ADDA921EED43C0041FC2D /* ProfileViewController.swift in Sources */,
 				EEB6DEDF21ECF22400FD4B77 /* UserHomeViewController.swift in Sources */,
+				EE3F48DC21F2C4B500ACEDAB /* PinsProtocol.swift in Sources */,
+				EE3F48D821F2C46600ACEDAB /* PinsPresenter.swift in Sources */,
 				EEB004E321ECD560007CE532 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
