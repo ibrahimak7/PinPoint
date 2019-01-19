@@ -27,6 +27,9 @@
 		EEB6DEDF21ECF22400FD4B77 /* UserHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB6DEDE21ECF22400FD4B77 /* UserHomeViewController.swift */; };
 		EEB6DEE221ECF6F500FD4B77 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB6DEE121ECF6F500FD4B77 /* TextFieldExtension.swift */; };
 		EEB6DEE421ECF75E00FD4B77 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB6DEE321ECF75E00FD4B77 /* LoginViewController.swift */; };
+		EEFE7BFC21F37596002D3F35 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFE7BFB21F37596002D3F35 /* SearchViewController.swift */; };
+		EEFE7BFF21F3794A002D3F35 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFE7BFE21F3794A002D3F35 /* SearchPresenter.swift */; };
+		EEFE7C0221F37CAA002D3F35 /* SearchProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFE7C0121F37CAA002D3F35 /* SearchProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +56,9 @@
 		EEB6DEDE21ECF22400FD4B77 /* UserHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHomeViewController.swift; sourceTree = "<group>"; };
 		EEB6DEE121ECF6F500FD4B77 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		EEB6DEE321ECF75E00FD4B77 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		EEFE7BFB21F37596002D3F35 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		EEFE7BFE21F3794A002D3F35 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		EEFE7C0121F37CAA002D3F35 /* SearchProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProtocol.swift; sourceTree = "<group>"; };
 		F34DFD3738A24BDAED66BB18 /* Pods-PinPoint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinPoint.release.xcconfig"; path = "Pods/Target Support Files/Pods-PinPoint/Pods-PinPoint.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +115,21 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		EE3F48DE21F2D71000ACEDAB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		EE3F48DF21F2D71D00ACEDAB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EE6ADDA821EED43C0041FC2D /* ProfileViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		EE6ABD5321EE2A2100FC78C5 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,7 +172,8 @@
 		EE6ADDAA21EED4580041FC2D /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				EE6ADDA821EED43C0041FC2D /* ProfileViewController.swift */,
+				EE3F48DF21F2D71D00ACEDAB /* View */,
+				EE3F48DE21F2D71000ACEDAB /* Presenter */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -177,6 +199,7 @@
 		EEB004E121ECD560007CE532 /* PinPoint */ = {
 			isa = PBXGroup;
 			children = (
+				EEFE7BF921F37575002D3F35 /* Search */,
 				EE6ADDAA21EED4580041FC2D /* Profile */,
 				EE6ABD6421EE46C400FC78C5 /* Pins */,
 				EEB6DEE021ECF6C100FD4B77 /* ExtraExtensions */,
@@ -208,6 +231,40 @@
 				EEB6DEE121ECF6F500FD4B77 /* TextFieldExtension.swift */,
 			);
 			path = ExtraExtensions;
+			sourceTree = "<group>";
+		};
+		EEFE7BF921F37575002D3F35 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				EEFE7C0021F37C99002D3F35 /* Protocol */,
+				EEFE7BFD21F3785E002D3F35 /* Presenter */,
+				EEFE7BFA21F3757E002D3F35 /* View */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		EEFE7BFA21F3757E002D3F35 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EEFE7BFB21F37596002D3F35 /* SearchViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EEFE7BFD21F3785E002D3F35 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				EEFE7BFE21F3794A002D3F35 /* SearchPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		EEFE7C0021F37C99002D3F35 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				EEFE7C0121F37CAA002D3F35 /* SearchProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,12 +433,15 @@
 				EE6ABD6621EE46E400FC78C5 /* PinsViewController.swift in Sources */,
 				EE5A170C21ED7EA0001F3087 /* RegisterViewController.swift in Sources */,
 				EE6ABD6121EE41DB00FC78C5 /* LoginModel.swift in Sources */,
+				EEFE7C0221F37CAA002D3F35 /* SearchProtocol.swift in Sources */,
 				EE6ABD5A21EE2B2400FC78C5 /* RegisterModel.swift in Sources */,
 				EEB6DEE221ECF6F500FD4B77 /* TextFieldExtension.swift in Sources */,
 				EE6ABD6321EE421D00FC78C5 /* LoginProtocol.swift in Sources */,
+				EEFE7BFC21F37596002D3F35 /* SearchViewController.swift in Sources */,
 				EE6ADDA921EED43C0041FC2D /* ProfileViewController.swift in Sources */,
 				EEB6DEDF21ECF22400FD4B77 /* UserHomeViewController.swift in Sources */,
 				EE3F48DC21F2C4B500ACEDAB /* PinsProtocol.swift in Sources */,
+				EEFE7BFF21F3794A002D3F35 /* SearchPresenter.swift in Sources */,
 				EE3F48D821F2C46600ACEDAB /* PinsPresenter.swift in Sources */,
 				EEB004E321ECD560007CE532 /* AppDelegate.swift in Sources */,
 			);

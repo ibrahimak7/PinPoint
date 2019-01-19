@@ -22,7 +22,6 @@ class PinsViewController: UIViewController, CLLocationManagerDelegate {
         
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
-        print(Auth.auth().currentUser?.photoURL)
         // givig defualt map setup
         setupMap()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest

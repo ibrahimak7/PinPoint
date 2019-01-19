@@ -29,14 +29,51 @@
         <!--Search-->
         <scene sceneID="jh7-5g-7dD">
             <objects>
-                <viewController id="wjf-Lt-fu0" sceneMemberID="viewController">
+                <viewController id="wjf-Lt-fu0" customClass="SearchViewController" customModule="PinPoint" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gNi-W2-U1P">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="mb2-k3-MDs">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7E8-ri-P7L">
+                                <rect key="frame" x="0.0" y="100" width="414" height="713"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" id="nZr-XC-gDw">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nZr-XC-gDw" id="P9Z-dF-BU4">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="wjf-Lt-fu0" id="eR9-h1-H0g"/>
+                                    <outlet property="delegate" destination="wjf-Lt-fu0" id="wcc-AF-Jm5"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vAt-gF-c3z" firstAttribute="trailing" secondItem="7E8-ri-P7L" secondAttribute="trailing" id="6rD-2t-gqo"/>
+                            <constraint firstItem="mb2-k3-MDs" firstAttribute="top" secondItem="vAt-gF-c3z" secondAttribute="top" id="7GQ-nM-5VX"/>
+                            <constraint firstItem="7E8-ri-P7L" firstAttribute="leading" secondItem="vAt-gF-c3z" secondAttribute="leading" id="TcG-AY-bwD"/>
+                            <constraint firstItem="mb2-k3-MDs" firstAttribute="leading" secondItem="vAt-gF-c3z" secondAttribute="leading" id="Y9g-gm-LX7"/>
+                            <constraint firstItem="mb2-k3-MDs" firstAttribute="trailing" secondItem="vAt-gF-c3z" secondAttribute="trailing" id="cPR-1q-acp"/>
+                            <constraint firstItem="vAt-gF-c3z" firstAttribute="bottom" secondItem="7E8-ri-P7L" secondAttribute="bottom" id="lHv-8c-2fY"/>
+                            <constraint firstItem="7E8-ri-P7L" firstAttribute="top" secondItem="mb2-k3-MDs" secondAttribute="bottom" id="vHZ-Vw-q8z"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vAt-gF-c3z"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="search" id="GdG-Lz-uce"/>
+                    <connections>
+                        <outlet property="searchBar" destination="mb2-k3-MDs" id="IfZ-tQ-AbP"/>
+                        <outlet property="tableView" destination="7E8-ri-P7L" id="C4l-2B-InD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qwF-Eg-xih" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
