@@ -45,5 +45,6 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     // presenter delegates
     func searchComplete(searchDataFetched users: [SearchModel]) {
         data = users
+        tableView.reloadData()
     }
 }

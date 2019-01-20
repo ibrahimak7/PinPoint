@@ -27,7 +27,7 @@ class SearchPresenter: NSObject {
                         self.usersList.append(SearchModel(name: name!, id: key as! String))
                     }
                 }
-                
+                self.delegate.searchComplete(searchDataFetched: self.usersList)
             }
         }
     }
