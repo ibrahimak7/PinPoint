@@ -9,5 +9,5 @@
 import Foundation
 protocol SearchProtocol {
     func searchComplete(searchDataFetched users: [SearchModel])
-    func userAdded(title: String, row: Int)
+    func userAdded(row: Int)
 }
