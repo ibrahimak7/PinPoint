@@ -9,8 +9,8 @@
 import UIKit
 
 class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, SearchProtocol {
-    
-    var data = [String]()
+
+    var data = [SearchModel]()
     let presenter = SearchPresenter()
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -38,12 +38,12 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell") as? SearchTableCell
-        cell?.nameLabel.text = data[indexPath.row]
+        cell?.nameLabel.text = data[indexPath.row].userName
 //        cell?.textLabel?.text = data[indexPath.row]
         return cell!
     }
-    func searchComplete(searchDataFetched users: [String], ids: [String]) {
+    // presenter delegates
+    func searchComplete(searchDataFetched users: [SearchModel]) {
         data = users
-        tableView.reloadData()
     }
 }

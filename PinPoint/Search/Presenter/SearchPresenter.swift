@@ -11,12 +11,10 @@ import Firebase
 class SearchPresenter: NSObject {
     var delegate: SearchProtocol!
     var ref: DatabaseReference!
-    var foundUsers = [String]()
-    var foundUsersIds = [String]()
+    var usersList = [SearchModel]()
     
     func findUser(userName name: String) {
-        foundUsersIds.removeAll()
-        foundUsers.removeAll()
+        usersList.removeAll()
         ref = Database.database().reference()
         ref.child("Profile").observeSingleEvent(of: .value) { (snapShot) in
             if snapShot.exists() {
@@ -25,12 +23,11 @@ class SearchPresenter: NSObject {
                 for key in keys! {
                     let user = data![key] as? NSDictionary
                     if name == user!["name"]! as? String {
-                        let name = user!["name"]!
-                        self.foundUsers.append(name as! String)
-                        self.foundUsersIds.append(key as! String)
-                        self.delegate.searchComplete(searchDataFetched: self.foundUsers, ids: self.foundUsersIds)
+                        let name = user!["name"]! as? String
+                        self.usersList.append(SearchModel(name: name!, id: key as! String))
                     }
                 }
+                
             }
         }
     }
