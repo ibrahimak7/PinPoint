@@ -13,7 +13,10 @@ class SearchPresenter: NSObject {
     var ref: DatabaseReference!
     var foundUsers = [String]()
     var foundUsersIds = [String]()
+    
     func findUser(userName name: String) {
+        foundUsersIds.removeAll()
+        foundUsers.removeAll()
         ref = Database.database().reference()
         ref.child("Profile").observeSingleEvent(of: .value) { (snapShot) in
             if snapShot.exists() {

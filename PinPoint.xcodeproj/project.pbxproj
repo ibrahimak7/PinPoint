@@ -19,6 +19,7 @@
 		EE6ABD6321EE421D00FC78C5 /* LoginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6ABD6221EE421D00FC78C5 /* LoginProtocol.swift */; };
 		EE6ABD6621EE46E400FC78C5 /* PinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6ABD6521EE46E400FC78C5 /* PinsViewController.swift */; };
 		EE6ADDA921EED43C0041FC2D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6ADDA821EED43C0041FC2D /* ProfileViewController.swift */; };
+		EE7C2FF021F414E600292D13 /* SearchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7C2FEF21F414E600292D13 /* SearchTableCell.swift */; };
 		EEB004E321ECD560007CE532 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB004E221ECD560007CE532 /* AppDelegate.swift */; };
 		EEB004EA21ECD560007CE532 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEB004E821ECD560007CE532 /* Main.storyboard */; };
 		EEB004EC21ECD562007CE532 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEB004EB21ECD562007CE532 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		EE6ABD6221EE421D00FC78C5 /* LoginProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocol.swift; sourceTree = "<group>"; };
 		EE6ABD6521EE46E400FC78C5 /* PinsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinsViewController.swift; sourceTree = "<group>"; };
 		EE6ADDA821EED43C0041FC2D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		EE7C2FEF21F414E600292D13 /* SearchTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableCell.swift; sourceTree = "<group>"; };
 		EEB004DF21ECD560007CE532 /* PinPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PinPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEB004E221ECD560007CE532 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEB004E921ECD560007CE532 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				EEFE7BFB21F37596002D3F35 /* SearchViewController.swift */,
+				EE7C2FEF21F414E600292D13 /* SearchTableCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				EEB6DEE421ECF75E00FD4B77 /* LoginViewController.swift in Sources */,
 				EE6ABD5721EE2ACF00FC78C5 /* RegisterPresenter.swift in Sources */,
 				EE6ABD5F21EE41C200FC78C5 /* LoginPresenter.swift in Sources */,
+				EE7C2FF021F414E600292D13 /* SearchTableCell.swift in Sources */,
 				EE6ABD6621EE46E400FC78C5 /* PinsViewController.swift in Sources */,
 				EE5A170C21ED7EA0001F3087 /* RegisterViewController.swift in Sources */,
 				EE6ABD6121EE41DB00FC78C5 /* LoginModel.swift in Sources */,
