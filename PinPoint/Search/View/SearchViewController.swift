@@ -14,6 +14,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     let presenter = SearchPresenter()
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    var headerTitle = "Users"
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView(frame: .zero)
@@ -22,7 +23,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         tableView.delegate = self
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Requests"
+        return headerTitle
     }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         data.removeAll()
@@ -40,12 +41,25 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell") as? SearchTableCell
         cell?.selectionStyle = .none
         cell?.nameLabel.text = data[indexPath.row].userName
-        cell?.addUser.addTarget(self, action: #selector(addBtnTapped), for: .touchUpInside)
+        cell?.addUser.addTarget(self, action: #selector(addBtnTapped(_:)), for: .touchUpInside)
 //        cell?.textLabel?.text = data[indexPath.row]
         return cell!
     }
-    @objc func addBtnTapped(){
+    @objc func addBtnTapped(_ sender: UIButton){
+//        let point = sender.convert(CGPoint.zero, to: tableView as UIView)
+//        let indexPath: IndexPath! = tableView.indexPathForRow(at: point)
+        
+    }
     
+    @IBAction func segmentForTableView(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            print("searches clicked")
+        case 1:
+            print("Requests clicked")
+        default:
+            print("Send clicked")
+        }
     }
     // presenter delegates
     func searchComplete(searchDataFetched users: [SearchModel]) {
