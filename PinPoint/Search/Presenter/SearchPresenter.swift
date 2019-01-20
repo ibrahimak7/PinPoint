@@ -15,7 +15,7 @@ class SearchPresenter: NSObject {
     
     func findUser(userName name: String) {
         usersList.removeAll()
-        ref = Database.database().reference()
+        configDB()
         ref.child("Profile").observeSingleEvent(of: .value) { (snapShot) in
             if snapShot.exists() {
                 let data = snapShot.value as? NSDictionary
@@ -33,11 +33,19 @@ class SearchPresenter: NSObject {
     }
     func getAllRequests(){
         let uid = Auth.auth().currentUser?.uid
-        ref = Database.database().reference()
+        configDB()
         ref.child("Requests/\(uid!)").observeSingleEvent(of: .value) { (snapShot) in
             if snapShot.exists() {
                 
             }
         }
+    }
+    func addUser(userID id: String, row: Int){
+        configDB()
+        ref.child("Requests/\(id)").setValue([Auth.auth().currentUser?.uid: "added"])
+        self.delegate.userAdded(row: row)
+    }
+    func configDB(){
+        ref = Database.database().reference()
     }
 }
