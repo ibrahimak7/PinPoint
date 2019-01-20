@@ -25,6 +25,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         return "Requests"
     }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        data.removeAll()
+        tableView.reloadData()
         self.presenter.findUser(userName: searchBar.text!)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
