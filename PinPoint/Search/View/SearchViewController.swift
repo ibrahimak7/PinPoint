@@ -31,8 +31,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         return headerTitle
     }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        data.removeAll()
-        tableView.reloadData()
+        removeAndReload()
         switch selectedTab {
         case 0:
             self.presenter.findUser(userName: searchBar.text!)
