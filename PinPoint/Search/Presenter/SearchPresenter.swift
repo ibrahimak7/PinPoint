@@ -31,4 +31,13 @@ class SearchPresenter: NSObject {
             }
         }
     }
+    func getAllRequests(){
+        let uid = Auth.auth().currentUser?.uid
+        ref = Database.database().reference()
+        ref.child("Requests/\(uid!)").observeSingleEvent(of: .value) { (snapShot) in
+            if snapShot.exists() {
+                
+            }
+        }
+    }
 }
