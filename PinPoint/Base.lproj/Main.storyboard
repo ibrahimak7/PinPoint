@@ -39,7 +39,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7E8-ri-P7L">
-                                <rect key="frame" x="0.0" y="100" width="414" height="713"/>
+                                <rect key="frame" x="0.0" y="128" width="414" height="685"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" rowHeight="83" id="nZr-XC-gDw" customClass="SearchTableCell" customModule="PinPoint" customModuleProvider="target">
@@ -92,16 +92,28 @@
                                     <outlet property="delegate" destination="wjf-Lt-fu0" id="wcc-AF-Jm5"/>
                                 </connections>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hOr-5G-Lmb">
+                                <rect key="frame" x="0.0" y="100" width="414" height="29"/>
+                                <segments>
+                                    <segment title="Search"/>
+                                    <segment title="Requests"/>
+                                    <segment title="Sent"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="vAt-gF-c3z" firstAttribute="trailing" secondItem="7E8-ri-P7L" secondAttribute="trailing" id="6rD-2t-gqo"/>
+                            <constraint firstItem="7E8-ri-P7L" firstAttribute="leading" secondItem="vAt-gF-c3z" secondAttribute="leading" id="3cG-Wz-pIn"/>
                             <constraint firstItem="mb2-k3-MDs" firstAttribute="top" secondItem="vAt-gF-c3z" secondAttribute="top" id="7GQ-nM-5VX"/>
-                            <constraint firstItem="7E8-ri-P7L" firstAttribute="leading" secondItem="vAt-gF-c3z" secondAttribute="leading" id="TcG-AY-bwD"/>
+                            <constraint firstItem="7E8-ri-P7L" firstAttribute="top" secondItem="hOr-5G-Lmb" secondAttribute="bottom" id="8bl-NW-4ad"/>
+                            <constraint firstItem="hOr-5G-Lmb" firstAttribute="top" secondItem="mb2-k3-MDs" secondAttribute="bottom" id="S7w-ra-w0E"/>
+                            <constraint firstItem="hOr-5G-Lmb" firstAttribute="leading" secondItem="vAt-gF-c3z" secondAttribute="leading" id="Xii-wA-r0d"/>
                             <constraint firstItem="mb2-k3-MDs" firstAttribute="leading" secondItem="vAt-gF-c3z" secondAttribute="leading" id="Y9g-gm-LX7"/>
+                            <constraint firstItem="7E8-ri-P7L" firstAttribute="bottom" secondItem="vAt-gF-c3z" secondAttribute="bottom" id="b7R-04-yIW"/>
                             <constraint firstItem="mb2-k3-MDs" firstAttribute="trailing" secondItem="vAt-gF-c3z" secondAttribute="trailing" id="cPR-1q-acp"/>
-                            <constraint firstItem="vAt-gF-c3z" firstAttribute="bottom" secondItem="7E8-ri-P7L" secondAttribute="bottom" id="lHv-8c-2fY"/>
-                            <constraint firstItem="7E8-ri-P7L" firstAttribute="top" secondItem="mb2-k3-MDs" secondAttribute="bottom" id="vHZ-Vw-q8z"/>
+                            <constraint firstItem="7E8-ri-P7L" firstAttribute="top" secondItem="hOr-5G-Lmb" secondAttribute="bottom" id="dxy-LW-Dm8"/>
+                            <constraint firstItem="7E8-ri-P7L" firstAttribute="trailing" secondItem="vAt-gF-c3z" secondAttribute="trailing" id="nM0-fI-FDh"/>
+                            <constraint firstItem="hOr-5G-Lmb" firstAttribute="trailing" secondItem="vAt-gF-c3z" secondAttribute="trailing" id="xZU-cS-8rR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vAt-gF-c3z"/>
                     </view>
