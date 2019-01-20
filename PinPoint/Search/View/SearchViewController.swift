@@ -53,7 +53,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell") as? SearchTableCell
         cell?.selectionStyle = .none
         cell?.nameLabel.text = data[indexPath.row].userName
-        cell?.addUser.addTarget(self, action: #selector(addBtnTapped(_:)), for: .touchUpInside)
+        configureCellBtn(cell: cell!)
 //        cell?.textLabel?.text = data[indexPath.row]
         return cell!
     }
@@ -62,7 +62,17 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
 //        let indexPath: IndexPath! = tableView.indexPathForRow(at: point)
         
     }
-    
+    func configureCellBtn(cell: SearchTableCell) {
+        switch selectedTab {
+        case 0:
+            cell.addUser.setTitle("Add", for: .normal)
+        case 1:
+            cell.addUser.setTitle("Accept", for: .normal)
+        default:
+            cell.addUser.setTitle("Cancel", for: .normal)
+        }
+        cell.addUser.addTarget(self, action: #selector(addBtnTapped(_:)), for: .touchUpInside)
+    }
     @IBAction func segmentForTableView(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
