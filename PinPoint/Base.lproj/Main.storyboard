@@ -56,18 +56,27 @@
                                                         <constraint firstAttribute="height" constant="60" id="iMS-Jk-g6W"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPK-2b-wnF">
-                                                    <rect key="frame" x="88" y="31" width="298" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="u7Y-Lb-mIN">
+                                                    <rect key="frame" x="88" y="26.5" width="298" height="30"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPK-2b-wnF">
+                                                            <rect key="frame" x="0.0" y="0.0" width="45" height="30"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nV5-ga-Hja">
+                                                            <rect key="frame" x="268" y="0.0" width="30" height="30"/>
+                                                            <state key="normal" title="Add"/>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="iPK-2b-wnF" secondAttribute="trailing" constant="8" id="5n7-Cg-zjG"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="u7Y-Lb-mIN" secondAttribute="trailing" constant="8" id="7KK-6k-4PM"/>
+                                                <constraint firstItem="u7Y-Lb-mIN" firstAttribute="centerY" secondItem="P9Z-dF-BU4" secondAttribute="centerY" id="9Ch-jf-jlN"/>
                                                 <constraint firstItem="mk3-wp-TZx" firstAttribute="centerY" secondItem="P9Z-dF-BU4" secondAttribute="centerY" id="Cpg-Qh-Cr3"/>
-                                                <constraint firstItem="iPK-2b-wnF" firstAttribute="centerY" secondItem="P9Z-dF-BU4" secondAttribute="centerY" id="SMG-DF-Djj"/>
-                                                <constraint firstItem="iPK-2b-wnF" firstAttribute="leading" secondItem="mk3-wp-TZx" secondAttribute="trailing" constant="8" id="xas-Q9-tzd"/>
+                                                <constraint firstItem="u7Y-Lb-mIN" firstAttribute="leading" secondItem="mk3-wp-TZx" secondAttribute="trailing" constant="8" id="ESk-Rg-P1w"/>
                                                 <constraint firstItem="mk3-wp-TZx" firstAttribute="leading" secondItem="P9Z-dF-BU4" secondAttribute="leadingMargin" id="yrF-O2-ETY"/>
                                             </constraints>
                                         </tableViewCellContentView>
