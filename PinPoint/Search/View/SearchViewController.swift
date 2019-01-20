@@ -58,8 +58,11 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         return cell!
     }
     @objc func addBtnTapped(_ sender: UIButton){
-//        let point = sender.convert(CGPoint.zero, to: tableView as UIView)
-//        let indexPath: IndexPath! = tableView.indexPathForRow(at: point)
+        let point = sender.convert(CGPoint.zero, to: tableView as UIView)
+        let indexPath: IndexPath! = tableView.indexPathForRow(at: point)
+        if sender.titleLabel?.text == "Add" {
+            self.presenter.addUser(userID: data[indexPath.row].userID, row: indexPath.row)
+        }
         
     }
     func configureCellBtn(cell: SearchTableCell) {
@@ -96,5 +99,10 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     func searchComplete(searchDataFetched users: [SearchModel]) {
         data = users
         tableView.reloadData()
+    }
+    func userAdded(row: Int) {
+        data.remove(at: row)
+        tableView.deleteRows(at: [IndexPath(row: row, section: 0)], with: .automatic)
+        
     }
 }
