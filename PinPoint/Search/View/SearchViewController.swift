@@ -15,6 +15,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     var headerTitle = "Users"
+    var selectedTab = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView(frame: .zero)
@@ -22,13 +23,25 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         searchBar.delegate = self
         tableView.delegate = self
     }
+    func removeAndReload(){
+        data.removeAll()
+        tableView.reloadData()
+    }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return headerTitle
     }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         data.removeAll()
         tableView.reloadData()
-        self.presenter.findUser(userName: searchBar.text!)
+        switch selectedTab {
+        case 0:
+            self.presenter.findUser(userName: searchBar.text!)
+        case 1:
+            print("Request are here")
+        default:
+            print("You are looking sent requests")
+        }
+        
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
@@ -54,10 +67,19 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     @IBAction func segmentForTableView(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
+            removeAndReload()
+            searchBar.text = ""
+            selectedTab = 0
             print("searches clicked")
         case 1:
+            removeAndReload()
+            searchBar.text = ""
+            selectedTab = 1
             print("Requests clicked")
         default:
+            removeAndReload()
+            searchBar.text = ""
+            selectedTab = 2
             print("Send clicked")
         }
     }
