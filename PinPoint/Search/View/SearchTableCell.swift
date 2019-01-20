@@ -12,6 +12,8 @@ class SearchTableCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profileView: UIImageView!
+    @IBOutlet weak var addUser: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -81,6 +81,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="addUser" destination="nV5-ga-Hja" id="82M-8I-GdT"/>
                                             <outlet property="nameLabel" destination="iPK-2b-wnF" id="N5G-A0-Xbk"/>
                                             <outlet property="profileView" destination="mk3-wp-TZx" id="r3Q-yP-vIT"/>
                                         </connections>
