@@ -38,6 +38,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell") as? SearchTableCell
+        cell?.selectionStyle = .none
         cell?.nameLabel.text = data[indexPath.row].userName
         cell?.addUser.addTarget(self, action: #selector(addBtnTapped), for: .touchUpInside)
 //        cell?.textLabel?.text = data[indexPath.row]
