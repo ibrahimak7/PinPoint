@@ -88,7 +88,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
             removeAndReload()
             searchBar.text = ""
             selectedTab = 1
-            print("Requests clicked")
+            self.presenter.getAllRequests()
         default:
             headerTitle = "Sent Requests"
             removeAndReload()

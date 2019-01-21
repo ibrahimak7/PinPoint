@@ -46,11 +46,17 @@ class SearchPresenter: NSObject {
         self.delegate.searchComplete(searchDataFetched: self.usersList)
     }
     func getAllRequests(){
-        let uid = Auth.auth().currentUser?.uid
         configDB()
-        ref.child("Famaily/\(uid!)").observeSingleEvent(of: .value) { (snapShot) in
+        ref.child("Family/\(uid!)").observeSingleEvent(of: .value) { (snapShot) in
             if snapShot.exists() {
-                
+                let data = snapShot.value as? NSDictionary
+                let keys = data?.allKeys
+                for key in (keys as? [String])! {
+                    let status = data![key] as? String
+                    if status == "pending" {
+                        print("Request here")
+                    }
+                }
             }
         }
     }
