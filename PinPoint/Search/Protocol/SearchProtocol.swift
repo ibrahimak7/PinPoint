@@ -10,4 +10,5 @@ import Foundation
 protocol SearchProtocol {
     func searchComplete(searchDataFetched users: [SearchModel])
     func userAdded(row: Int)
+    func fetchAllRequests(fetchedRequests users: [SearchModel])
 }
