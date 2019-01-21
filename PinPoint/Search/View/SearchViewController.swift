@@ -107,4 +107,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         tableView.deleteRows(at: [IndexPath(row: row, section: 0)], with: .automatic)
         
     }
+    func fetchAllRequests(fetchedRequests users: [SearchModel]) {
+        data = users
+        tableView.reloadData()
+    }
 }
