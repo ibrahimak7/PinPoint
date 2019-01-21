@@ -94,7 +94,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
             removeAndReload()
             searchBar.text = ""
             selectedTab = 2
-            print("Send clicked")
+            self.presenter.getSentRequests()
         }
     }
     // presenter delegates
