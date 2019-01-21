@@ -9,7 +9,6 @@
 import UIKit
 
 class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, SearchProtocol {
-
     var data = [SearchModel]()
     let presenter = SearchPresenter()
     @IBOutlet weak var searchBar: UISearchBar!
