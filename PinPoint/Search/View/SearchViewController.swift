@@ -78,16 +78,19 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     @IBAction func segmentForTableView(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
+            headerTitle = "Search"
             removeAndReload()
             searchBar.text = ""
             selectedTab = 0
             print("searches clicked")
         case 1:
+            headerTitle = "Requests"
             removeAndReload()
             searchBar.text = ""
             selectedTab = 1
             print("Requests clicked")
         default:
+            headerTitle = "Sent Requests"
             removeAndReload()
             searchBar.text = ""
             selectedTab = 2
