@@ -25,8 +25,8 @@ class SearchPresenter: NSObject {
                     if snapShot2.exists() {
                         let data = snapShot2.value as? NSDictionary
                         self.familyMembers = data?.allKeys as! [String]
-                        self.extractNewUsers(familyMembers: self.familyMembers, keys: (keys as? [String])!, data: dataP!, name: name)
                     }
+                    self.extractNewUsers(familyMembers: self.familyMembers, keys: (keys as? [String])!, data: dataP!, name: name)
                 })
                 
             }
@@ -76,6 +76,7 @@ class SearchPresenter: NSObject {
     func addUser(userID id: String, row: Int){
         configDB()
         ref.child("Family/\(id)").setValue([Auth.auth().currentUser?.uid: "pending"])
+        ref.child("SentRequests/\(uid!)").setValue([id: "sent"])
         self.delegate.userAdded(row: row)
     }
     func configDB(){
