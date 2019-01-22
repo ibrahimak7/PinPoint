@@ -38,6 +38,7 @@ class RegisterPresenter: NSObject {
     }
     fileprivate func createProfile(name: String, uuid: String) {
         ref = Database.database().reference()
+        ref.child("Family/\(uuid)").setValue([uuid: "added"])
         ref.child("Profile/\(uuid)").setValue(["name":name]) { (err, response) in
             guard err == nil else { return }
             // remembering user here.
