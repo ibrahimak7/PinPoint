@@ -74,16 +74,26 @@ class SearchPresenter: NSObject {
         }
     }
     func getSentRequests(){
+        var userIDs = [String]()
         configDB()
-        ref.child("SentRequests/\(uid!)").observeSingleEvent(of: .value) { (snapShot) in
-            let data = snapShot.value as? NSDictionary
-            self.pullProfiles(ids: (data?.allKeys as? [String])!)
+        ref.child("Family/\(uid!)").observeSingleEvent(of: .value) { (snapShot) in
+            if snapShot.exists() {
+                let data = snapShot.value as? NSDictionary
+                let keys = data?.allKeys
+                for key in (keys as? [String])! {
+                    let status = data![key] as? String
+                    if status == "sent" {
+                        userIDs.append(key)
+                    }
+                }
+            }
+            self.pullProfiles(ids: userIDs)
         }
     }
     func addUser(userID id: String, row: Int){
         configDB()
-        ref.child("Family/\(id)").setValue([Auth.auth().currentUser?.uid: "pending"])
-        ref.child("SentRequests/\(uid!)").setValue([id: "sent"])
+        ref.child("Family/\(id)").setValue([uid: "pending"])
+        ref.child("Family/\(uid!)").setValue([id: "sent"])
         self.delegate.userAdded(row: row)
     }
     func configDB(){
