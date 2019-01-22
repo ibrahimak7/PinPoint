@@ -92,8 +92,8 @@ class SearchPresenter: NSObject {
     }
     func addUser(userID id: String, row: Int){
         configDB()
-        ref.child("Family/\(id)").setValue([uid: "pending"])
-        ref.child("Family/\(uid!)").setValue([id: "sent"])
+        ref.child("Family/\(id)/\(uid!)").setValue("pending")
+        ref.child("Family/\(uid!)/\(id)").setValue("sent")
         self.delegate.userAdded(row: row)
     }
     func configDB(){
