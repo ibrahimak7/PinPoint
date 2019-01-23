@@ -60,7 +60,9 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         let point = sender.convert(CGPoint.zero, to: tableView as UIView)
         let indexPath: IndexPath! = tableView.indexPathForRow(at: point)
         if sender.titleLabel?.text == "Add" {
-            self.presenter.addUser(userID: data[indexPath.row].userID, row: indexPath.row)
+            self.presenter.addUser(userID: data[indexPath.row].userID, row: indexPath.row, sender: "sent", reciever: "pending")
+        }else if sender.titleLabel?.text == "Accept" {
+            self.presenter.addUser(userID: data[indexPath.row].userID, row: indexPath.row, sender: "added", reciever: "added")
         }
         
     }

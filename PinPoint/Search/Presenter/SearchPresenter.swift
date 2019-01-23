@@ -90,10 +90,10 @@ class SearchPresenter: NSObject {
             self.pullProfiles(ids: userIDs)
         }
     }
-    func addUser(userID id: String, row: Int){
+    func addUser(userID id: String, row: Int, sender: String, reciever: String){
         configDB()
-        ref.child("Family/\(id)/\(uid!)").setValue("pending")
-        ref.child("Family/\(uid!)/\(id)").setValue("sent")
+        ref.child("Family/\(id)/\(uid!)").setValue(reciever)
+        ref.child("Family/\(uid!)/\(id)").setValue(sender)
         self.delegate.userAdded(row: row)
     }
     func configDB(){
