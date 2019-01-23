@@ -16,6 +16,7 @@ class ProfileViewController: UIViewController, ProfileProtocol {
         super.viewDidLoad()
         presenter = ProfilePresenter()
         presenter.delegate = self
+        presenter.fetchProfile()
         // Do any additional setup after loading the view.
     }
     
@@ -39,7 +40,7 @@ class ProfileViewController: UIViewController, ProfileProtocol {
         
     }
     func profileFetched(user: ProfileModel) {
-        
+        nameLabel.text = user.name
     }
     
 }
