@@ -178,7 +178,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6YR-86-JZ0">
                                 <rect key="frame" x="100" y="459" width="214" height="30"/>
-                                <color key="backgroundColor" red="0.085328288380000006" green="0.39111649990000003" blue="0.85351878400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.082218162715435028" green="0.37576302886009216" blue="0.82517820596694946" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Logout">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -196,16 +196,25 @@
                                             <constraint firstAttribute="height" constant="160" id="HXx-wf-oYk"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXU-GE-sdG">
+                                        <rect key="frame" x="180.5" y="30" width="53" height="30"/>
+                                        <state key="normal" title="Change"/>
+                                        <connections>
+                                            <action selector="changeImage:" destination="ANJ-La-K8N" eventType="touchUpInside" id="fNx-Gb-bb9"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95510848445595853" green="0.95510848445595853" blue="0.95510848445595853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="Mxj-vY-YVd" firstAttribute="top" secondItem="UXU-GE-sdG" secondAttribute="bottom" constant="10" id="9jD-cI-Htb"/>
                                     <constraint firstItem="Mxj-vY-YVd" firstAttribute="centerY" secondItem="dex-Ro-347" secondAttribute="centerY" id="IKO-ec-Ty9"/>
                                     <constraint firstItem="Mxj-vY-YVd" firstAttribute="centerX" secondItem="dex-Ro-347" secondAttribute="centerX" id="Jko-vl-0ZQ"/>
+                                    <constraint firstItem="UXU-GE-sdG" firstAttribute="centerX" secondItem="dex-Ro-347" secondAttribute="centerX" id="MbN-pe-wqL"/>
                                     <constraint firstAttribute="width" constant="414" id="Ruu-Vn-62E"/>
                                     <constraint firstAttribute="height" constant="300" id="tgI-J2-OF9"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="40g-oa-DrN">
+                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="40g-oa-DrN">
                                 <rect key="frame" x="20" y="408" width="374" height="31"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -227,9 +236,19 @@
                         <viewLayoutGuide key="safeArea" id="Yuv-s8-Ihg"/>
                     </view>
                     <navigationItem key="navigationItem" id="IIZ-GF-4Hx">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="IU3-pQ-Fcr"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="B6X-eq-rRM">
+                            <connections>
+                                <action selector="cancelBtn:" destination="ANJ-La-K8N" id="I0O-Hc-xKK"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="IU3-pQ-Fcr">
+                            <connections>
+                                <action selector="editSave:" destination="ANJ-La-K8N" id="Aeh-uI-ja2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="changeBtn" destination="UXU-GE-sdG" id="GOI-iS-h6w"/>
                         <outlet property="dpImageView" destination="Mxj-vY-YVd" id="vD2-xj-bY5"/>
                         <outlet property="userName" destination="40g-oa-DrN" id="vZJ-wo-Aud"/>
                     </connections>

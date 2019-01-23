@@ -26,7 +26,7 @@ extension UITextField
     {
         self.borderStyle = UITextField.BorderStyle.none;
         let border = CALayer()
-        let width = CGFloat(2.0)
+        let width = CGFloat(0.5)
         border.borderColor = UIColor(hexString: color).cgColor
         border.frame = CGRect(x: 0, y: self.frame.size.height - width,   width:  self.frame.size.width, height: self.frame.size.height)
         
