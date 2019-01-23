@@ -96,6 +96,12 @@ class SearchPresenter: NSObject {
         ref.child("Family/\(uid!)/\(id)").setValue(sender)
         self.delegate.userAdded(row: row)
     }
+    func cancelUser(userID id: String, row: Int){
+        configDB()
+        ref.child("Family/\(id)/\(uid!)").setValue(nil)
+        ref.child("Family/\(uid!)/\(id)").setValue(nil)
+        self.delegate.userRemoved(row: row)
+    }
     func configDB(){
         ref = Database.database().reference()
     }

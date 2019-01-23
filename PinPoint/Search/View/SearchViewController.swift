@@ -63,6 +63,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
             self.presenter.addUser(userID: data[indexPath.row].userID, row: indexPath.row, sender: "sent", reciever: "pending")
         }else if sender.titleLabel?.text == "Accept" {
             self.presenter.addUser(userID: data[indexPath.row].userID, row: indexPath.row, sender: "added", reciever: "added")
+        }else if sender.titleLabel?.text == "Cancel" {
+            self.presenter.cancelUser(userID: data[indexPath.row].userID, row: indexPath.row)
         }
         
     }
@@ -112,5 +114,9 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     func fetchAllRequests(fetchedRequests users: [SearchModel]) {
         data = users
         tableView.reloadData()
+    }
+    func userRemoved(row: Int) {
+        data.remove(at: row)
+        tableView.deleteRows(at: [IndexPath(row: row, section: 0)], with: .automatic)
     }
 }
