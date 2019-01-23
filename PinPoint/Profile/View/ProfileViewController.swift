@@ -11,13 +11,16 @@ import Firebase
 class ProfileViewController: UIViewController, ProfileProtocol {
     var presenter: ProfilePresenter!
     @IBOutlet weak var dpImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var userName: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = ProfilePresenter()
         presenter.delegate = self
         presenter.fetchProfile()
         // Do any additional setup after loading the view.
+        userName.borderStyle = .none
+        dpImageView.layer.cornerRadius = dpImageView.bounds.height/2
     }
     
     @IBAction func logoutClicked(_ sender: Any) {
@@ -40,7 +43,7 @@ class ProfileViewController: UIViewController, ProfileProtocol {
         
     }
     func profileFetched(user: ProfileModel) {
-        nameLabel.text = user.name
+        userName.text = user.name
     }
     
 }

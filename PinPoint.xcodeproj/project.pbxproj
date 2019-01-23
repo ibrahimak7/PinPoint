@@ -26,7 +26,7 @@
 		EEB004EF21ECD562007CE532 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEB004ED21ECD562007CE532 /* LaunchScreen.storyboard */; };
 		EEB6DEDC21ECD66800FD4B77 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEB6DEDB21ECD66800FD4B77 /* GoogleService-Info.plist */; };
 		EEB6DEDF21ECF22400FD4B77 /* UserHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB6DEDE21ECF22400FD4B77 /* UserHomeViewController.swift */; };
-		EEB6DEE221ECF6F500FD4B77 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB6DEE121ECF6F500FD4B77 /* TextFieldExtension.swift */; };
+		EEB6DEE221ECF6F500FD4B77 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB6DEE121ECF6F500FD4B77 /* Extensions.swift */; };
 		EEB6DEE421ECF75E00FD4B77 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB6DEE321ECF75E00FD4B77 /* LoginViewController.swift */; };
 		EEC9AE2021F46CC700559E98 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC9AE1F21F46CC700559E98 /* SearchModel.swift */; };
 		EEE01D0621F83E7D003AA691 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE01D0521F83E7D003AA691 /* ProfilePresenter.swift */; };
@@ -60,7 +60,7 @@
 		EEB004F021ECD562007CE532 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEB6DEDB21ECD66800FD4B77 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EEB6DEDE21ECF22400FD4B77 /* UserHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHomeViewController.swift; sourceTree = "<group>"; };
-		EEB6DEE121ECF6F500FD4B77 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
+		EEB6DEE121ECF6F500FD4B77 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EEB6DEE321ECF75E00FD4B77 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EEC9AE1F21F46CC700559E98 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		EEE01D0521F83E7D003AA691 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
@@ -241,7 +241,7 @@
 		EEB6DEE021ECF6C100FD4B77 /* ExtraExtensions */ = {
 			isa = PBXGroup;
 			children = (
-				EEB6DEE121ECF6F500FD4B77 /* TextFieldExtension.swift */,
+				EEB6DEE121ECF6F500FD4B77 /* Extensions.swift */,
 			);
 			path = ExtraExtensions;
 			sourceTree = "<group>";
@@ -477,7 +477,7 @@
 				EE6ABD6121EE41DB00FC78C5 /* LoginModel.swift in Sources */,
 				EEFE7C0221F37CAA002D3F35 /* SearchProtocol.swift in Sources */,
 				EE6ABD5A21EE2B2400FC78C5 /* RegisterModel.swift in Sources */,
-				EEB6DEE221ECF6F500FD4B77 /* TextFieldExtension.swift in Sources */,
+				EEB6DEE221ECF6F500FD4B77 /* Extensions.swift in Sources */,
 				EE6ABD6321EE421D00FC78C5 /* LoginProtocol.swift in Sources */,
 				EEFE7BFC21F37596002D3F35 /* SearchViewController.swift in Sources */,
 				EE6ADDA921EED43C0041FC2D /* ProfileViewController.swift in Sources */,
