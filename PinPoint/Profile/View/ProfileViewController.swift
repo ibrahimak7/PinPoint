@@ -8,11 +8,14 @@
 
 import UIKit
 import Firebase
-class ProfileViewController: UIViewController {
-
+class ProfileViewController: UIViewController, ProfileProtocol {
+    var presenter: ProfilePresenter!
+    @IBOutlet weak var dpImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        presenter = ProfilePresenter()
+        presenter.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -33,6 +36,9 @@ class ProfileViewController: UIViewController {
             alert.addAction(action)
             self.present(alert, animated: true)
         }
+        
+    }
+    func profileFetched(user: ProfileModel) {
         
     }
     

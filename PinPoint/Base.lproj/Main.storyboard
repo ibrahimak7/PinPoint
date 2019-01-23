@@ -226,6 +226,10 @@
                         <viewLayoutGuide key="safeArea" id="Yuv-s8-Ihg"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="profile" id="xKw-sf-dqB"/>
+                    <connections>
+                        <outlet property="dpImageView" destination="Mxj-vY-YVd" id="vD2-xj-bY5"/>
+                        <outlet property="nameLabel" destination="cjI-8W-Qdw" id="3Dj-hj-ZGa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nUd-O4-bf6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
