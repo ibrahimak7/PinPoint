@@ -10,6 +10,7 @@ import UIKit
 
 class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, SearchProtocol {
     var data = [SearchModel]()
+    var saveUsersBackup = [SearchModel]()
     let presenter = SearchPresenter()
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -21,6 +22,12 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         presenter.delegate = self
         searchBar.delegate = self
         tableView.delegate = self
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(endEditing))
+        view.addGestureRecognizer(gesture)
+    }
+    @objc func endEditing(){
+        view.endEditing(true)
     }
     func removeAndReload(){
         data.removeAll()
@@ -35,9 +42,9 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         case 0:
             self.presenter.findUser(userName: searchBar.text!)
         case 1:
-            print("Request are here")
+            findUser(name: searchBar.text!)
         default:
-            print("You are looking sent requests")
+            findUser(name: searchBar.text!)
         }
         
     }
@@ -55,6 +62,17 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         configureCellBtn(cell: cell!)
 //        cell?.textLabel?.text = data[indexPath.row]
         return cell!
+    }
+    func findUser(name: String) {
+        var matchedUser = [SearchModel]()
+        for i in data {
+            if name == i.userName {
+                matchedUser.append(i)
+            }
+        }
+        data.removeAll()
+        data = matchedUser
+        tableView.reloadData()
     }
     @objc func addBtnTapped(_ sender: UIButton){
         let point = sender.convert(CGPoint.zero, to: tableView as UIView)
@@ -113,10 +131,18 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     }
     func fetchAllRequests(fetchedRequests users: [SearchModel]) {
         data = users
+        saveUsersBackup = users
         tableView.reloadData()
     }
     func userRemoved(row: Int) {
         data.remove(at: row)
         tableView.deleteRows(at: [IndexPath(row: row, section: 0)], with: .automatic)
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == "" {
+            data.removeAll()
+            data = saveUsersBackup
+            tableView.reloadData()
+        }
     }
 }
