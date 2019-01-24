@@ -220,9 +220,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OEK-aY-uUW">
+                                <rect key="frame" x="20" y="773" width="374" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="wo1-8F-SB0"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="OEK-aY-uUW" firstAttribute="leading" secondItem="Yuv-s8-Ihg" secondAttribute="leading" constant="20" id="6CQ-ae-sFQ"/>
                             <constraint firstItem="dex-Ro-347" firstAttribute="trailing" secondItem="Yuv-s8-Ihg" secondAttribute="trailing" id="AUb-7V-fmP"/>
                             <constraint firstItem="dex-Ro-347" firstAttribute="top" secondItem="Yuv-s8-Ihg" secondAttribute="top" id="KcB-ya-veA"/>
                             <constraint firstItem="dex-Ro-347" firstAttribute="leading" secondItem="Yuv-s8-Ihg" secondAttribute="leading" id="Sbz-uL-VZC"/>
@@ -230,8 +238,10 @@
                             <constraint firstItem="Yuv-s8-Ihg" firstAttribute="trailing" secondItem="6YR-86-JZ0" secondAttribute="trailing" constant="100" id="UeY-D4-xeX"/>
                             <constraint firstItem="40g-oa-DrN" firstAttribute="leading" secondItem="Yuv-s8-Ihg" secondAttribute="leading" constant="20" id="YAm-y1-dsA"/>
                             <constraint firstItem="6YR-86-JZ0" firstAttribute="top" secondItem="40g-oa-DrN" secondAttribute="bottom" constant="20" id="Zk7-bw-zlk"/>
+                            <constraint firstItem="Yuv-s8-Ihg" firstAttribute="bottom" secondItem="OEK-aY-uUW" secondAttribute="bottom" constant="20" id="dw4-ll-JP7"/>
                             <constraint firstItem="6YR-86-JZ0" firstAttribute="leading" secondItem="Yuv-s8-Ihg" secondAttribute="leading" constant="100" id="u6W-bw-6KI"/>
                             <constraint firstItem="Yuv-s8-Ihg" firstAttribute="trailing" secondItem="40g-oa-DrN" secondAttribute="trailing" constant="20" id="wYk-ea-lik"/>
+                            <constraint firstItem="Yuv-s8-Ihg" firstAttribute="trailing" secondItem="OEK-aY-uUW" secondAttribute="trailing" constant="20" id="zwr-T0-piB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Yuv-s8-Ihg"/>
                     </view>
@@ -250,6 +260,7 @@
                     <connections>
                         <outlet property="changeBtn" destination="UXU-GE-sdG" id="GOI-iS-h6w"/>
                         <outlet property="dpImageView" destination="Mxj-vY-YVd" id="vD2-xj-bY5"/>
+                        <outlet property="progressView" destination="OEK-aY-uUW" id="JV3-8B-s1i"/>
                         <outlet property="userName" destination="40g-oa-DrN" id="vZJ-wo-Aud"/>
                     </connections>
                 </viewController>

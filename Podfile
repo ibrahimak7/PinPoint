@@ -7,9 +7,11 @@ target 'PinPoint' do
 
   # Pods for PinPoint
   pod 'Firebase/Core'
+  pod 'Firebase/Storage'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   pod 'SDWebImage', '~> 4.0'
+  pod 'GTProgressBar'
 end
