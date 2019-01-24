@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import UIKit
 protocol ProfileProtocol {
     func profileFetched(user: ProfileModel)
+    func showMsg(msg: String)
+    func dpUploading(progress: CGFloat)
 }

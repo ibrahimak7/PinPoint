@@ -9,7 +9,9 @@
 import Foundation
 struct ProfileModel {
     let name: String
-    init(name: String) {
+    let imageURL: String
+    init(name: String, url: String) {
         self.name = name
+        self.imageURL = url
     }
 }
