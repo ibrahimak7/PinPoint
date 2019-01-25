@@ -20,6 +20,7 @@
 		EE6ABD6621EE46E400FC78C5 /* PinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6ABD6521EE46E400FC78C5 /* PinsViewController.swift */; };
 		EE6ADDA921EED43C0041FC2D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6ADDA821EED43C0041FC2D /* ProfileViewController.swift */; };
 		EE7C2FF021F414E600292D13 /* SearchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7C2FEF21F414E600292D13 /* SearchTableCell.swift */; };
+		EE826DA021FA20B70011146B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE826D9F21FA20B70011146B /* ChatViewController.swift */; };
 		EEB004E321ECD560007CE532 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB004E221ECD560007CE532 /* AppDelegate.swift */; };
 		EEB004EA21ECD560007CE532 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEB004E821ECD560007CE532 /* Main.storyboard */; };
 		EEB004EC21ECD562007CE532 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEB004EB21ECD562007CE532 /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		EE6ABD6521EE46E400FC78C5 /* PinsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinsViewController.swift; sourceTree = "<group>"; };
 		EE6ADDA821EED43C0041FC2D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		EE7C2FEF21F414E600292D13 /* SearchTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableCell.swift; sourceTree = "<group>"; };
+		EE826D9F21FA20B70011146B /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		EEB004DF21ECD560007CE532 /* PinPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PinPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEB004E221ECD560007CE532 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEB004E921ECD560007CE532 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -141,6 +143,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		EE4313F221FA01D200491110 /* Chats */ = {
+			isa = PBXGroup;
+			children = (
+				EE826D9E21FA209A0011146B /* View */,
+			);
+			path = Chats;
+			sourceTree = "<group>";
+		};
 		EE6ABD5321EE2A2100FC78C5 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +201,14 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		EE826D9E21FA209A0011146B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EE826D9F21FA20B70011146B /* ChatViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		EEB004D621ECD560007CE532 = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +230,7 @@
 		EEB004E121ECD560007CE532 /* PinPoint */ = {
 			isa = PBXGroup;
 			children = (
+				EE4313F221FA01D200491110 /* Chats */,
 				EEFE7BF921F37575002D3F35 /* Search */,
 				EE6ADDAA21EED4580041FC2D /* Profile */,
 				EE6ABD6421EE46C400FC78C5 /* Pins */,
@@ -477,6 +496,7 @@
 				EE6ABD6621EE46E400FC78C5 /* PinsViewController.swift in Sources */,
 				EE5A170C21ED7EA0001F3087 /* RegisterViewController.swift in Sources */,
 				EE6ABD6121EE41DB00FC78C5 /* LoginModel.swift in Sources */,
+				EE826DA021FA20B70011146B /* ChatViewController.swift in Sources */,
 				EEFE7C0221F37CAA002D3F35 /* SearchProtocol.swift in Sources */,
 				EE6ABD5A21EE2B2400FC78C5 /* RegisterModel.swift in Sources */,
 				EEB6DEE221ECF6F500FD4B77 /* Extensions.swift in Sources */,

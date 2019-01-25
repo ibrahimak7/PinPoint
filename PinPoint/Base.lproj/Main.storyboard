@@ -34,13 +34,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="mb2-k3-MDs">
-                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" smartDashesType="no" smartQuotesType="no" textContentType="name"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7E8-ri-P7L">
-                                <rect key="frame" x="0.0" y="128" width="414" height="685"/>
+                                <rect key="frame" x="0.0" y="210" width="414" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" rowHeight="83" id="nZr-XC-gDw" customClass="SearchTableCell" customModule="PinPoint" customModuleProvider="target">
@@ -94,7 +89,7 @@
                                 </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hOr-5G-Lmb">
-                                <rect key="frame" x="0.0" y="100" width="414" height="29"/>
+                                <rect key="frame" x="0.0" y="182" width="414" height="29"/>
                                 <segments>
                                     <segment title="Search"/>
                                     <segment title="Requests"/>
@@ -104,19 +99,33 @@
                                     <action selector="segmentForTableView:" destination="wjf-Lt-fu0" eventType="valueChanged" id="U9s-50-r8f"/>
                                 </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find your Family" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKg-K0-Jyr">
+                                <rect key="frame" x="11" y="74" width="192" height="32"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="mb2-k3-MDs">
+                                <rect key="frame" x="0.0" y="116" width="414" height="56"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" smartDashesType="no" smartQuotesType="no" textContentType="name"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="7E8-ri-P7L" firstAttribute="leading" secondItem="vAt-gF-c3z" secondAttribute="leading" id="3cG-Wz-pIn"/>
-                            <constraint firstItem="mb2-k3-MDs" firstAttribute="top" secondItem="vAt-gF-c3z" secondAttribute="top" id="7GQ-nM-5VX"/>
-                            <constraint firstItem="7E8-ri-P7L" firstAttribute="top" secondItem="hOr-5G-Lmb" secondAttribute="bottom" id="8bl-NW-4ad"/>
-                            <constraint firstItem="hOr-5G-Lmb" firstAttribute="top" secondItem="mb2-k3-MDs" secondAttribute="bottom" id="S7w-ra-w0E"/>
+                            <constraint firstItem="mb2-k3-MDs" firstAttribute="trailing" secondItem="vAt-gF-c3z" secondAttribute="trailing" id="83D-Jy-b6v"/>
+                            <constraint firstItem="mb2-k3-MDs" firstAttribute="top" secondItem="uKg-K0-Jyr" secondAttribute="bottom" constant="10" id="D3c-OA-yzi"/>
+                            <constraint firstItem="uKg-K0-Jyr" firstAttribute="top" secondItem="vAt-gF-c3z" secondAttribute="top" constant="30" id="Sd6-MX-G9K"/>
+                            <constraint firstItem="7E8-ri-P7L" firstAttribute="trailing" secondItem="hOr-5G-Lmb" secondAttribute="trailing" id="TRK-81-iMX"/>
+                            <constraint firstItem="uKg-K0-Jyr" firstAttribute="centerX" secondItem="gNi-W2-U1P" secondAttribute="centerX" constant="-100" id="UfP-Ng-0u0"/>
+                            <constraint firstItem="7E8-ri-P7L" firstAttribute="bottom" secondItem="vAt-gF-c3z" secondAttribute="bottom" id="XZM-Py-qg0"/>
                             <constraint firstItem="hOr-5G-Lmb" firstAttribute="leading" secondItem="vAt-gF-c3z" secondAttribute="leading" id="Xii-wA-r0d"/>
-                            <constraint firstItem="mb2-k3-MDs" firstAttribute="leading" secondItem="vAt-gF-c3z" secondAttribute="leading" id="Y9g-gm-LX7"/>
-                            <constraint firstItem="7E8-ri-P7L" firstAttribute="bottom" secondItem="vAt-gF-c3z" secondAttribute="bottom" id="b7R-04-yIW"/>
-                            <constraint firstItem="mb2-k3-MDs" firstAttribute="trailing" secondItem="vAt-gF-c3z" secondAttribute="trailing" id="cPR-1q-acp"/>
-                            <constraint firstItem="7E8-ri-P7L" firstAttribute="top" secondItem="hOr-5G-Lmb" secondAttribute="bottom" id="dxy-LW-Dm8"/>
-                            <constraint firstItem="7E8-ri-P7L" firstAttribute="trailing" secondItem="vAt-gF-c3z" secondAttribute="trailing" id="nM0-fI-FDh"/>
+                            <constraint firstItem="7E8-ri-P7L" firstAttribute="top" secondItem="hOr-5G-Lmb" secondAttribute="bottom" id="aoD-Ct-gYN"/>
+                            <constraint firstItem="mb2-k3-MDs" firstAttribute="leading" secondItem="vAt-gF-c3z" secondAttribute="leading" id="dJb-lS-r1f"/>
+                            <constraint firstItem="7E8-ri-P7L" firstAttribute="leading" secondItem="hOr-5G-Lmb" secondAttribute="leading" id="fid-ze-JNJ"/>
+                            <constraint firstItem="hOr-5G-Lmb" firstAttribute="leading" secondItem="vAt-gF-c3z" secondAttribute="leading" id="m3X-tK-N4i"/>
+                            <constraint firstItem="hOr-5G-Lmb" firstAttribute="top" secondItem="mb2-k3-MDs" secondAttribute="bottom" constant="10" id="mx6-ts-hED"/>
+                            <constraint firstItem="hOr-5G-Lmb" firstAttribute="trailing" secondItem="vAt-gF-c3z" secondAttribute="trailing" id="oM2-Tc-WXU"/>
                             <constraint firstItem="hOr-5G-Lmb" firstAttribute="trailing" secondItem="vAt-gF-c3z" secondAttribute="trailing" id="xZU-cS-8rR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vAt-gF-c3z"/>
@@ -131,16 +140,16 @@
             </objects>
             <point key="canvasLocation" x="2318.840579710145" y="-320.08928571428572"/>
         </scene>
-        <!--Chat-->
+        <!--Chat View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="ChatViewController" customModule="PinPoint" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="106.5" y="426.5" width="201.5" height="43"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Chat will be here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
+                                <rect key="frame" x="79.5" y="426.5" width="255" height="43"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -152,21 +161,40 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fO-vG-F7x">
+                                <rect key="frame" x="0.0" y="812" width="414" height="862"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="862" id="WuM-YK-KUw"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
                             <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
+                            <constraint firstAttribute="trailing" secondItem="2fO-vG-F7x" secondAttribute="trailing" id="Ofe-I4-dDi"/>
+                            <constraint firstAttribute="bottom" secondItem="2fO-vG-F7x" secondAttribute="bottom" constant="-778" id="Y5R-ya-MgC"/>
+                            <constraint firstItem="2fO-vG-F7x" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="bzB-Ax-thW"/>
                             <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Chat" image="chat" id="cPa-gy-q4n"/>
+                    <navigationItem key="navigationItem" id="90h-Nh-OA8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="rGs-ke-MqR">
+                            <connections>
+                                <action selector="showFamily:" destination="8rJ-Kc-sve" id="1Jp-bh-jU0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="topConstraint" destination="Y5R-ya-MgC" id="uzH-o8-2fq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1658" y="360"/>
+            <point key="canvasLocation" x="2319" y="360"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="3c2-CV-sJN">
@@ -266,7 +294,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nUd-O4-bf6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3568.115942028986" y="359.59821428571428"/>
+            <point key="canvasLocation" x="4478.2608695652179" y="359.59821428571428"/>
         </scene>
         <!--User Home View Controller-->
         <scene sceneID="gdL-7y-m56">
@@ -559,7 +587,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="6Dr-2a-iG9" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="wjf-Lt-fu0" kind="relationship" relationship="viewControllers" id="hjg-mY-8jy"/>
                         <segue destination="Hj8-iH-Igk" kind="relationship" relationship="viewControllers" id="7bJ-6r-LkO"/>
                     </connections>
@@ -603,7 +631,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wx7-aY-Fb5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2657.971014492754" y="359.59821428571428"/>
+            <point key="canvasLocation" x="3568.115942028986" y="359.59821428571428"/>
+        </scene>
+        <!--Chat-->
+        <scene sceneID="fiK-TI-e2D">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Dr-2a-iG9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Chat" image="chat" id="cPa-gy-q4n"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hZc-Ef-9WY">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="dbI-OY-EIy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eqk-Gg-nqK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1657.9710144927537" y="359.59821428571428"/>
         </scene>
     </scenes>
     <resources>
