@@ -7,3 +7,6 @@
 //
 
 import Foundation
+protocol ChatProtocol {
+    func fetchFamily(users: [ProfileModel])
+}
