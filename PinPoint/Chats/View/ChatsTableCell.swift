@@ -1,22 +1,18 @@
 //
-//  ChatsCell.swift
+//  ChatsTableCell.swift
 //  PinPoint
 //
-//  Created by Ibbi Khan on 26/01/2019.
+//  Created by Ibbi Khan on 30/01/2019.
 //  Copyright © 2019 Ibbi Khan. All rights reserved.
 //
 
 import UIKit
 
-class ChatsCell: UITableViewCell {
+class ChatsTableCell: UITableViewCell {
 
-    @IBOutlet weak var userDp: UIImageView!
-    @IBOutlet weak var userName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        userDp.layer.cornerRadius = userDp.bounds.height/2
-        userDp.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

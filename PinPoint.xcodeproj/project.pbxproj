@@ -34,6 +34,7 @@
 		EEB6DEE221ECF6F500FD4B77 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB6DEE121ECF6F500FD4B77 /* Extensions.swift */; };
 		EEB6DEE421ECF75E00FD4B77 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB6DEE321ECF75E00FD4B77 /* LoginViewController.swift */; };
 		EEC9AE2021F46CC700559E98 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC9AE1F21F46CC700559E98 /* SearchModel.swift */; };
+		EED0E0D32201DFD300AE087E /* ChatsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED0E0D22201DFD300AE087E /* ChatsTableCell.swift */; };
 		EEE01D0621F83E7D003AA691 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE01D0521F83E7D003AA691 /* ProfilePresenter.swift */; };
 		EEE01D0A21F83EB8003AA691 /* ProfileProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE01D0921F83EB8003AA691 /* ProfileProtocol.swift */; };
 		EEE01D0C21F83EEA003AA691 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE01D0B21F83EEA003AA691 /* ProfileModel.swift */; };
@@ -73,6 +74,7 @@
 		EEB6DEE121ECF6F500FD4B77 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EEB6DEE321ECF75E00FD4B77 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EEC9AE1F21F46CC700559E98 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		EED0E0D22201DFD300AE087E /* ChatsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableCell.swift; sourceTree = "<group>"; };
 		EEE01D0521F83E7D003AA691 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		EEE01D0921F83EB8003AA691 /* ProfileProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocol.swift; sourceTree = "<group>"; };
 		EEE01D0B21F83EEA003AA691 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				EE826D9F21FA20B70011146B /* ChatViewController.swift */,
+				EED0E0D22201DFD300AE087E /* ChatsTableCell.swift */,
 				EEA5809521FC4A8A0041FE49 /* ChatsCell.swift */,
 			);
 			path = View;
@@ -545,6 +548,7 @@
 				EEB6DEDF21ECF22400FD4B77 /* UserHomeViewController.swift in Sources */,
 				EE3F48DC21F2C4B500ACEDAB /* PinsProtocol.swift in Sources */,
 				EEE01D0621F83E7D003AA691 /* ProfilePresenter.swift in Sources */,
+				EED0E0D32201DFD300AE087E /* ChatsTableCell.swift in Sources */,
 				EEA5809C21FC4C630041FE49 /* ChatProtocol.swift in Sources */,
 				EEE01D0C21F83EEA003AA691 /* ProfileModel.swift in Sources */,
 				EEFE7BFF21F3794A002D3F35 /* SearchPresenter.swift in Sources */,

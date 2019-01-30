@@ -13,6 +13,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var topSegment: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     var data = [ProfileModel]()
+    var selectedTab = 0
     override func viewDidLoad() {
         tableView.tableFooterView = UIView(frame: .zero)
         super.viewDidLoad()
@@ -29,10 +30,11 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func segmentClicked(_ sender: UISegmentedControl) {
+        removeAndReload()
         if sender.selectedSegmentIndex == 0 {
-            
+            selectedTab = 0
         }else{
-            removeAndReload()
+            selectedTab = 1
             self.presenter.fetchFamily()
         }
     }
@@ -44,9 +46,16 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "chatCell") as? ChatsCell
-        cell?.userDp.sd_setImage(with: URL(string: data[indexPath.row].imageURL), completed: nil)
-        cell?.userName.text = data[indexPath.row].name
+        
+        if selectedTab == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "familyCell") as? ChatsCell
+            cell?.userDp.sd_setImage(with: URL(string: data[indexPath.row].imageURL), completed: nil)
+            cell?.userName.text = data[indexPath.row].name
+            return cell!
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatsTableCell") as? ChatsTableCell
+        cell?.textLabel?.text = "data"
         return cell!
     }
     func removeAndReload(){
