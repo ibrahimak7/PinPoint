@@ -37,7 +37,7 @@ class ChatPresenter: NSObject {
                     let data = snapShot.value as? NSDictionary
                     let name = data!["name"] as? String
                     let url =  data!["image"] as? String
-                    self.usersList.append(ProfileModel(name: name!, url: url!))
+                    self.usersList.append(ProfileModel(name: name!, url: url!, uid: key))
                     self.delegate.fetchFamily(users: self.usersList)
                 }
             }

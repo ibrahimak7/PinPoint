@@ -14,4 +14,5 @@ target 'PinPoint' do
   pod 'GooglePlaces'
   pod 'SDWebImage', '~> 4.0'
   pod 'GTProgressBar'
+  pod 'IQKeyboardManagerSwift'
 end

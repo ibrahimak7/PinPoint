@@ -33,6 +33,7 @@
 		EEB6DEDF21ECF22400FD4B77 /* UserHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB6DEDE21ECF22400FD4B77 /* UserHomeViewController.swift */; };
 		EEB6DEE221ECF6F500FD4B77 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB6DEE121ECF6F500FD4B77 /* Extensions.swift */; };
 		EEB6DEE421ECF75E00FD4B77 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB6DEE321ECF75E00FD4B77 /* LoginViewController.swift */; };
+		EEB885212206C3400034912A /* MessageTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB885202206C3400034912A /* MessageTableCell.swift */; };
 		EEC9AE2021F46CC700559E98 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC9AE1F21F46CC700559E98 /* SearchModel.swift */; };
 		EED0E0D32201DFD300AE087E /* ChatsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED0E0D22201DFD300AE087E /* ChatsTableCell.swift */; };
 		EED0E0D52201E5C400AE087E /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED0E0D42201E5C400AE087E /* ChatController.swift */; };
@@ -74,6 +75,7 @@
 		EEB6DEDE21ECF22400FD4B77 /* UserHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHomeViewController.swift; sourceTree = "<group>"; };
 		EEB6DEE121ECF6F500FD4B77 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EEB6DEE321ECF75E00FD4B77 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		EEB885202206C3400034912A /* MessageTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableCell.swift; sourceTree = "<group>"; };
 		EEC9AE1F21F46CC700559E98 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		EED0E0D22201DFD300AE087E /* ChatsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableCell.swift; sourceTree = "<group>"; };
 		EED0E0D42201E5C400AE087E /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				EED0E0D22201DFD300AE087E /* ChatsTableCell.swift */,
 				EEA5809521FC4A8A0041FE49 /* ChatsCell.swift */,
 				EED0E0D42201E5C400AE087E /* ChatController.swift */,
+				EEB885202206C3400034912A /* MessageTableCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 				EEE01D0C21F83EEA003AA691 /* ProfileModel.swift in Sources */,
 				EEFE7BFF21F3794A002D3F35 /* SearchPresenter.swift in Sources */,
 				EE3F48D821F2C46600ACEDAB /* PinsPresenter.swift in Sources */,
+				EEB885212206C3400034912A /* MessageTableCell.swift in Sources */,
 				EEB004E321ECD560007CE532 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -705,7 +709,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 898JQYKZMY;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PinPoint/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -724,7 +728,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 898JQYKZMY;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PinPoint/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

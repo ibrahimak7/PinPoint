@@ -8,21 +8,34 @@
 
 import UIKit
 
-class ChatController: UIViewController {
-
-    
+class ChatController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textView: UITextView!
+    let data = ["one","two","three"]
+    var recieverID: String!
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()        
+        tableView.delegate = self
+        textView.delegate = self
         tableView.tableFooterView = UIView(frame: .zero)
         textView.layer.cornerRadius = 12
-        // Do any additional setup after loading the view.
+        print(recieverID)
     }
     @IBAction func sendButtonClicked(_ sender: Any) {
+        textView.resignFirstResponder()
     }
     @IBAction func imageButtonClicked(_ sender: Any) {
     }
-    
 
+}
+extension ChatController {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = data[indexPath.row]
+        return cell
+    }
 }

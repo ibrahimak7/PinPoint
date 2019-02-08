@@ -14,6 +14,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var tableView: UITableView!
     var data = [ProfileModel]()
     var selectedTab = 0
+    var reciverID: String!
     override func viewDidLoad() {
         tableView.tableFooterView = UIView(frame: .zero)
         super.viewDidLoad()
@@ -26,7 +27,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         topSegment.removeBorders()
 
         // Do any additional setup after loading the view.
-        
+        self.hidesBottomBarWhenPushed = false
     }
     
     @IBAction func segmentClicked(_ sender: UISegmentedControl) {
@@ -58,6 +59,10 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell?.textLabel?.text = "data"
         return cell!
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        reciverID = data[indexPath.row].uid
+        self.performSegue(withIdentifier: "toMsgView", sender: nil)
+    }
     func removeAndReload(){
         data.removeAll()
         tableView.reloadData()
@@ -65,5 +70,15 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     func fetchFamily(users: [ProfileModel]) {
         data = users
         tableView.reloadData()
+    }
+    @IBAction func itemClicked(_ sender: Any) {
+        performSegue(withIdentifier: "toMsgView", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toMsgView" {
+            let destination = segue.destination as? ChatController
+            destination?.recieverID = reciverID
+        }
     }
 }

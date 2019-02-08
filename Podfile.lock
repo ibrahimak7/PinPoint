@@ -75,6 +75,7 @@ PODS:
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.2.1)
   - GTProgressBar (0.3.2)
+  - IQKeyboardManagerSwift (6.2.0)
   - leveldb-library (1.20)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
@@ -93,6 +94,7 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
   - GTProgressBar
+  - IQKeyboardManagerSwift
   - SDWebImage (~> 4.0)
 
 SPEC REPOS:
@@ -111,6 +113,7 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMSessionFetcher
     - GTProgressBar
+    - IQKeyboardManagerSwift
     - leveldb-library
     - nanopb
     - SDWebImage
@@ -130,10 +133,11 @@ SPEC CHECKSUMS:
   GoogleUtilities: 95996bea7c7d9b8fb811b7507669a4a8762f80c7
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   GTProgressBar: 3aa9731127b3ef193935d450928c3bd0f46bb1c4
+  IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
 
-PODFILE CHECKSUM: 855d14b95d034a1a3b8f9b75c057acffb31937b5
+PODFILE CHECKSUM: 6070214d250a3c0f0a5e2bb851ab8a579724ecb0
 
 COCOAPODS: 1.5.3

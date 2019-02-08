@@ -56,7 +56,7 @@ class ProfilePresenter: NSObject {
                 let data = snapShot.value as? NSDictionary
                 let name = data!["name"] as? String
                 let url =  data!["image"] as? String
-                let user = ProfileModel(name: name!, url: url!)
+                let user = ProfileModel(name: name!, url: url!, uid: self.uid!)
                 self.delegate.profileFetched(user: user)
             }
         }
